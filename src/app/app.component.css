@@ -2,3 +2,7 @@ main{
   max-width: 800px;
   margin: 0 auto;
 }
+
+mat-toolbar{
+  height: 56px;
+}
