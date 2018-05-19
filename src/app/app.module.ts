@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
     MainComponent,
     RegComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    HistoryComponent
   ],
   imports: [
     FormsModule,

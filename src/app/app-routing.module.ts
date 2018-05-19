@@ -4,6 +4,7 @@ import {MainComponent} from './main/main.component';
 import {RegComponent} from './reg/reg.component';
 import {LoginComponent} from "./login/login.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {HistoryComponent} from './history/history.component';
 
 const routes: Routes = [
     {
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'profile',
         component: ProfileComponent
+    },
+    {
+        path: 'history',
+        component: HistoryComponent
     }
 ];
 

@@ -1,4 +1,12 @@
 <div class="main-wrapper" *ngIf="recipes">
+  <div class="search-block">
+    <mat-form-field class="example-form-field">
+      <input matInput type="text" placeholder="Clearable input" [(ngModel)]="value"/>
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <i class="fa fa-times"></i>
+      </button>
+    </mat-form-field>
+  </div>
   <div class="meal-title">
     Breakfast
   </div>

@@ -1,0 +1,79 @@
+.item-card {
+  max-width: 784px;
+  margin: 10px;
+}
+.title{
+  color: #0D0D0D;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.content {
+  max-width: 800px;
+}
+.thumbnail{
+  display: block;
+  max-width: 144px;
+  margin-right: 10px;
+  height: auto;
+}
+
+.text{
+  width:80%;
+}
+.content{
+  display: flex;
+  justify-content: start;
+  align-content: flex-start;
+  flex-direction: row;
+  z-index: 0;
+}
+
+.cards{
+  display: inline-block;
+}
+.chart-icon{
+  position: absolute;
+  cursor: pointer;
+  top: 7px;
+  right: 9px;
+}
+.card-header{
+  display: flex;
+  justify-content: flex-end;
+}
+.card-footer{
+  display: flex;
+  justify-content:flex-end;
+  color: darkgray;
+}
+.pub-date{
+  display: inline-block;
+  padding-right: 4px;
+}
+
+.feed-title{
+  display: inline;
+  padding-left: 10px;
+}
+
+.feed-chanel-wrapper{
+  display: inline-block;
+}
+
+.title:hover{
+  color: blue;
+}
+
+.description{
+  color: #000;
+  font-weight: normal;
+}
+
+.error{
+  font-size: 2rem;
+}
+mat-spinner{
+  margin: 150% 390%;
+}
