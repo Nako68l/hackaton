@@ -1,0 +1,17 @@
+.example-form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.navigation-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.registration-form{
+    position: relative;
+    height: 5em;
+}
