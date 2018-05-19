@@ -1,0 +1,35 @@
+<div class="main-wrapper" *ngIf="recipes">
+  <div class="meal-navigation">
+    <span (click)="currentTab = 'breakfast'">Breakfast</span>
+    <span (click)="currentTab = 'dinner'">Dinner</span>
+    <span (click)="currentTab = 'supper'">Supper</span>
+  </div>
+  <div class="meal-block" *ngIf="currentTab === 'breakfast'">
+    <div class="meal-card" *ngFor="let recipe of recipes.breakfast">
+      <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
+      <div class="meal-card-content">
+        <mat-card-title>{{recipe.recipe.label}}</mat-card-title>
+        <div class="meal-card-controls">
+          <button mat-raised-button>Ingredients</button>
+          <button mat-raised-button>Recipe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="meal-block" *ngIf="currentTab === 'dinner'">
+    <div class="meal-card" *ngFor="let recipe of recipes.dinner">
+      <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
+      <div class="meal-card-content">
+        <mat-card-title>{{recipe.recipe.label}}</mat-card-title>
+      </div>
+    </div>
+  </div>
+  <div class="meal-block" *ngIf="currentTab === 'supper'">
+    <div class="meal-card" *ngFor="let recipe of recipes.supper">
+      <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
+      <div class="meal-card-content">
+        <mat-card-title>{{recipe.recipe.label}}</mat-card-title>
+      </div>
+    </div>
+  </div>
+</div>
