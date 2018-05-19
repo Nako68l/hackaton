@@ -6,7 +6,6 @@ import {AppComponent} from './app.component';
 import {MainComponent} from './main/main.component';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { RegComponent } from './reg/reg.component';
 import {FormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
 import { LoginComponent } from './login/login.component';
