@@ -9,5 +9,8 @@
 .navigation-buttons{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 40px;
+}
+.second-radio-button{
+    margin-left: 20px;
 }

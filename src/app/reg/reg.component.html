@@ -20,13 +20,10 @@
       <input matInput placeholder="Growth">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <mat-select placeholder="Favorite food">
-        <mat-option *ngFor="let food of foods" [value]="food.value">
-          {{ food.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <mat-radio-group>
+      <mat-radio-button checked value="1">Man</mat-radio-button>
+      <mat-radio-button class="second-radio-button" value="2">Woman</mat-radio-button>
+    </mat-radio-group>
 
     <div class="navigation-buttons">
       <div class="button-row">
