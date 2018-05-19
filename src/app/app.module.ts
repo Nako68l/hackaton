@@ -7,6 +7,7 @@ import {MainComponent} from './main/main.component';
 import {MaterialModule} from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RegComponent } from './reg/reg/reg.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RegComponent } from './reg/reg/reg.component';
     RegComponent
   ],
   imports: [
+    FormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,

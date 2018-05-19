@@ -12,6 +12,7 @@ import {
   MatListModule,
   MatProgressSpinnerModule,
   MatDialogModule,
+  MatCheckboxModule,
   MatTabsModule,
 } from '@angular/material';
 
@@ -20,6 +21,7 @@ import {
     MatProgressSpinnerModule,
     MatDialogModule,
     MatCardModule,
+    MatCheckboxModule,
     MatSelectModule,
     MatButtonModule,
     MatInputModule,

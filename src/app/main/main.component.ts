@@ -8,8 +8,8 @@ import {MainService} from '../services/main.service';
   providers: [MainService]
 })
 export class MainComponent implements OnInit {
-  currentTab: String = 'breakfast';
   recipes;
+  window = window;
 
   constructor(private mainService: MainService) { }
 
