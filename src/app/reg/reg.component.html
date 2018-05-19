@@ -1,0 +1,41 @@
+<div class="registration-form">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Login">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" type="password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Age">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Weight">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Growth">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Favorite food">
+        <mat-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="navigation-buttons">
+      <div class="button-row">
+        <button mat-raised-button>REGISTER</button>
+      </div>
+      <div class="button-row">
+        <button mat-raised-button color="primary">LOG IN</button>
+      </div>
+    </div>
+
+  </form>
+</div>

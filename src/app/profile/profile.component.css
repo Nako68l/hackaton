@@ -1,0 +1,66 @@
+.profile{
+    display: flex;
+    margin-top: 200px;
+}
+
+.titles{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.values{
+    margin: auto;
+}
+
+.title{
+    font-size: 2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.value{
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.login{
+    font-weight: bold;
+}
+
+.blocked{
+    width: 69%;
+    margin-left: 18%;
+    font-size: 1.5em;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.blocked-values{
+    background-color: #673ab7;
+    height: 100px;
+}
+
+.item{
+    font-weight: 100;
+}
+
+.blocked-margin{
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login{
+    color: #673ab7;
+}
