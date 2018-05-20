@@ -14,3 +14,9 @@
 .second-radio-button{
     margin-left: 20px;
 }
+
+.button-toggle{
+    width: 225px;
+    margin: auto;
+    margin-top: 35px;
+}
