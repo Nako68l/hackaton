@@ -5,7 +5,7 @@
       <a mat-button routerLink="/">Main</a>
       <a mat-button routerLink="/history">History</a>
     </div>
-    <a class="login" mat-button routerLink="/profile">Login</a>
+    <a class="login" mat-button routerLink="/profile" *ngIf="userName">{{userName}}</a>
   </mat-toolbar>
   <router-outlet></router-outlet>
 </main>

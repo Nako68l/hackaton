@@ -46,7 +46,6 @@
 .card-footer{
   display: flex;
   justify-content:flex-end;
-  color: darkgray;
 }
 .pub-date{
   display: inline-block;
@@ -77,3 +76,47 @@
 mat-spinner{
   margin: 150% 390%;
 }
+
+.notification-item:before {
+  display: block;
+  content: '';
+  height: 100%;
+  position: absolute;
+  border-right: 1px solid #e0e6f0;
+  top: 0;
+  left: 23px;
+}
+.notification-item {
+  min-height: 60px;
+  padding: 10px 50px 5px 50px;
+  position: relative;
+}
+.nt-date {
+  font-weight: 400;
+  font-size: 12px;
+  position: relative;
+  color: #90949c;
+}
+.nt-date:before {
+   display: block;
+   content: '';
+   width: 9px;
+   height: 9px;
+   position: absolute;
+   top: 5px;
+   left: -31px;
+   border-radius: 50%;
+   border: 2px solid #673ab7;
+   background: white;
+   outline: 10px solid white;
+ }
+.nt-text {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 13px;
+  color: #202f3b;
+}
+.notification-item:hover {
+ }
+.nt-date:before {
+ }

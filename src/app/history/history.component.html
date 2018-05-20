@@ -1,22 +1,13 @@
-<!--<mat-card class="item-card" *ngFor="let feedItem of chanelFeed.items">-->
-  <!--<mat-card-header class="card-header"><i class="material-icons blue-gray chart-icon" (click)="getStatistic(feedItem)">pie_chart</i></mat-card-header>-->
-  <!--<div class="content">-->
-    <!--<div>-->
-      <!--<a href="{{feedItem.link}}">-->
-        <!--<img class="thumbnail" *ngIf="!feedItem.enclosure.link" src="{{feedItem.thumbnail}}">-->
-        <!--<img class="thumbnail" *ngIf="feedItem.enclosure.link" src="{{feedItem.enclosure.link}}">-->
-      <!--</a>-->
-    <!--</div>-->
-    <!--<div class="text">-->
-      <!--<a class="title" href="{{feedItem.link}}">{{feedItem.title}}-->
-        <!--<div class="description" [innerHtml]="feedItem.description"></div>-->
-      <!--</a>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<mat-card-footer class="card-footer">-->
-    <!--<div class="pub-date">{{feedItem.pubDate | date:'HH:mm dd/MM/y'}}</div>-->
-  <!--</mat-card-footer>-->
-<!--</mat-card>-->
-<p>
-
-</p>
+<div style="width: 480px; margin: auto;" *ngIf="recipes?.length > 0">
+  <div class="notification-item" *ngFor="let recipe of recipes;">
+    <div>
+      <div class="nt-date">{{ d | date: 'd MMM y' }}</div>
+      <div class="nt-text">
+        <div
+          style="color: #673ab7">{{recipe.recipe.label}}
+        </div>
+        <div>{{window.parseInt(recipe.recipe.calories/recipe.recipe.yield)}} kcal</div>
+      </div>
+    </div>
+  </div>
+</div>

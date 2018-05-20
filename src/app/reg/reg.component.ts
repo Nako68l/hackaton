@@ -14,8 +14,9 @@ export class RegComponent implements OnInit {
   password;
   age;
   height;
-  gender;
+  gender = 'man';
   weight;
+  goal = 'maintain';
 
 
   constructor(private mainService: MainService,
@@ -32,7 +33,7 @@ export class RegComponent implements OnInit {
       growth: this.height,
       age: this.age,
       sex: this.gender,
-      activity: 'activity',
+      activity: this.goal,
       password: this.password
     };
     this.mainService.regUser(user).subscribe(res => {

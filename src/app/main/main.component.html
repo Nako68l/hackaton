@@ -47,8 +47,8 @@
   <div class="meal-block">
     <div class="meal-card" *ngFor="let recipe of recipes.Dinner">
       <div class="meal-card-content-wrapper">
-        <button class="add-to-history-btn" mat-mini-fab color="primary"><i class="fa fa-plus"></i></button>
-
+        <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
+        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
         <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
         <div class="meal-card-content">
           <div class="meal-card-title">{{recipe.recipe.label}}</div>
@@ -81,7 +81,8 @@
   <div class="meal-block">
     <div class="meal-card" *ngFor="let recipe of recipes.Supper">
       <div class="meal-card-content-wrapper">
-        <button class="add-to-history-btn" mat-mini-fab color="primary"><i class="fa fa-plus"></i></button>
+        <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
+        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
         <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
         <div class="meal-card-content">
           <div class="meal-card-title">{{recipe.recipe.label}}</div>
@@ -108,7 +109,6 @@
       </div>
     </div>
   </div>
-</div>
 <div class="spinner-wrapper" *ngIf="loading">
   <i class="fa fa-spinner fa-spin"></i>
 </div>

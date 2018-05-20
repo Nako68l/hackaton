@@ -8,7 +8,9 @@ import {MainService} from '../services/main.service';
   providers: [MainService]
 })
 export class HistoryComponent implements OnInit {
-
+  recipes = [];
+  window = window;
+d = new Date();
   constructor(private mainService: MainService) { }
 
   ngOnInit() {
@@ -17,7 +19,11 @@ export class HistoryComponent implements OnInit {
 
   getHistory(){
     this.mainService.getHistory().subscribe(res => {
-      console.log(res);
+      console.log(typeof res);
+      for(let i = 0; i < res["length"]; i++){
+        this.recipes.push(JSON.parse(res[i]))
+      }
+      console.log(this.recipes);
     })
   }
 

@@ -19,16 +19,21 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Height" [(ngModel)]="height" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-
+    <div class="gender">
+      Sex:
+    </div>
     <mat-radio-group [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
       <mat-radio-button checked value="man">Man</mat-radio-button>
       <mat-radio-button class="second-radio-button" value="woman">Woman</mat-radio-button>
     </mat-radio-group>
 
-    <mat-button-toggle-group class="button-toggle"name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle value="bold">Gain</mat-button-toggle>
-      <mat-button-toggle value="italic">Maintain</mat-button-toggle>
-      <mat-button-toggle value="underline">Lose</mat-button-toggle>
+    <div class="goal">
+      Weight goal:
+    </div>
+    <mat-button-toggle-group class="button-toggle" color="primary" name="fontStyle" aria-label="Font Style" [(ngModel)]="goal" [ngModelOptions]="{standalone: true}">
+      <mat-button-toggle value="gain">Gain</mat-button-toggle>
+      <mat-button-toggle value="maintain">Maintain</mat-button-toggle>
+      <mat-button-toggle value="lose">Lose</mat-button-toggle>
     </mat-button-toggle-group>
 
     <div class="navigation-buttons">

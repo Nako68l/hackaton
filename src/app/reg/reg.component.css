@@ -3,21 +3,31 @@
     flex-direction: column;
     width: 400px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .navigation-buttons{
   margin-left: auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .second-radio-button{
     margin-left: 20px;
 }
 
 .button-toggle{
-    width: 225px;
-    margin: auto;
-    margin-top: 35px;
+  width: 225px;
+}
+
+.gender{
+  margin-top: 5px;
+  color: rgba(0,0,0,.54);
+  margin-bottom: 6px;
+}
+.goal{
+  color: rgba(0,0,0,.54);
+  margin-bottom: 10px;
+  margin-top: 21px;
+  font-size: 15px;
 }
