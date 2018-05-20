@@ -28,8 +28,17 @@ export class MainComponent implements OnInit {
     })
   }
 
-  addRecipe(recipe){
-    this.mainService.addRecipeToHistory(recipe);
+  addRecipe(recipe) {
     recipe.addedToHistory = true;
+    this.mainService.addRecipeToHistory(recipe).subscribe(res => {
+      // recipe.recipeId = res['id'];
+    });
   }
+
+  // removeRecipe(recipe) {
+  //   recipe.addedToHistory = false;
+  //   this.mainService.removeRecipeById(recipe.recipeId).subscribe(res => {
+  //     delete recipe.recipeId;
+  //   });
+  // }
 }

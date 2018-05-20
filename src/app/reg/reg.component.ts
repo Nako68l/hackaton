@@ -37,6 +37,7 @@ export class RegComponent implements OnInit {
     };
     this.mainService.regUser(user).subscribe(res => {
       localStorage.setItem('token', res['token']);
+      localStorage.setItem('user', JSON.stringify(user));
       this.router.navigate(['/']);
     })
   }

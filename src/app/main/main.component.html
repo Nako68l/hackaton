@@ -14,7 +14,7 @@
     <div class="meal-card" *ngFor="let recipe of recipes.Breakfast">
       <div class="meal-card-content-wrapper">
         <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
-        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" (click)="recipe.addedToHistory = false" style="color: white"><i class="fa fa-check"></i></button>
+        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
         <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
         <div class="meal-card-content">
           <div class="meal-card-title">{{recipe.recipe.label}}</div>
