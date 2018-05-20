@@ -14,12 +14,14 @@ import {
     MatDialogModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatButtonToggleModule
 } from '@angular/material';
 
 @NgModule({
     exports: [
         MatProgressSpinnerModule,
+        MatButtonToggleModule,
         MatDialogModule,
         MatCardModule,
         MatCheckboxModule,
@@ -32,7 +34,7 @@ import {
         MatIconModule,
         MatFormFieldModule,
         MatTabsModule,
-        MatRadioModule
+        MatRadioModule,
     ]
 })
 export class MaterialModule {
