@@ -1,13 +1,14 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs/index';
-
-@Injectable({
-  providedIn: 'root'
-})
+// import {Subject} from 'rxjs';
+import * as Rx from "rxjs/Rx";
+import 'rxjs/observable';
+//providedIn: 'root'
+@Injectable()
 export class MainService implements OnInit {
-  apiUrl = 'http://b43d1674.ngrok.io/api/';
+  apiUrl: string = 'http://b43d1674.ngrok.io/api/';
   token;
+  nick: any = new Rx.Subject();
 
   constructor(private http: HttpClient) {
   }
@@ -62,9 +63,23 @@ export class MainService implements OnInit {
   //     })
   // }
 
-  public regUser(user) {
-    return this.http.post('/api/register',
-      user
-    )
+  public getDataToService () {
+    console.log(345643234)
+    return this.nick.asObservable()
   }
+
+   public setDataToService (user): any {
+    console.log('sadwdadsad0')
+     this.nick.next(user.nickname);
+     return this.http.post('/api/register',
+       user
+     )
+   }
+  // public regUser(user) {
+  //   this.nick.next(user.nickname);
+  //   this.ololo.next('AAAAA');
+  //   return this.http.post('/api/register',
+  //     user
+  //   )
+  // }
 }

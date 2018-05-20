@@ -23,6 +23,7 @@ export class MainComponent implements OnInit {
   getItems() {
     this.loading = true;
     this.mainService.getRecipesByDiet(this.value).subscribe(recipes => {
+      console.log(recipes);
       this.recipes = recipes;
       this.loading = false;
     })

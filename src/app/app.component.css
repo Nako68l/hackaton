@@ -3,19 +3,3 @@ main{
   margin: 0 auto;
 }
 
-mat-toolbar{
-  height: 56px;
-}
-
-.icon{
-  width: 45px;
-  pointer-events: none;
-}
-
-.navigation{
-  margin-left: 10px;
-}
-
-.login{
-  margin-left: auto;
-}

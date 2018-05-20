@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HistoryComponent } from './history/history.component';
 import {LoggedInGuard} from './guards/LoggedInGuard';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './header/header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     RegComponent,
     LoginComponent,
     ProfileComponent,
-    HistoryComponent
+    HistoryComponent,
+    HeaderComponent
   ],
   imports: [
     FormsModule,
