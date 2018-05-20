@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MainService} from '../services/main.service';
 
 @Component({
@@ -10,14 +10,26 @@ import {MainService} from '../services/main.service';
 export class MainComponent implements OnInit {
   recipes;
   window = window;
+  value;
+  public loading = false;
 
-  constructor(private mainService: MainService) { }
+  constructor(private mainService: MainService) {
+  }
 
   ngOnInit() {
-    this.mainService.getRecipesByDiet().subscribe(recipes=>{
-      console.log(recipes);
+    this.getItems();
+  }
+
+  getItems() {
+    this.loading = true;
+    this.mainService.getRecipesByDiet(this.value).subscribe(recipes => {
       this.recipes = recipes;
+      this.loading = false;
     })
   }
 
+  addRecipe(recipe){
+    this.mainService.addRecipeToHistory(recipe);
+    recipe.addedToHistory = true;
+  }
 }

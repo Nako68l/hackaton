@@ -11,6 +11,8 @@ import { RegComponent } from './reg/reg.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HistoryComponent } from './history/history.component';
+import {LoggedInGuard} from './guards/LoggedInGuard';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { HistoryComponent } from './history/history.component';
   ],
   imports: [
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [LoggedInGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

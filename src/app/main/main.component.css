@@ -46,10 +46,9 @@ mat-card {
   white-space: nowrap;
   overflow: hidden;
   font-size: 17px;
-  text-align: center;
   width: 216px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
@@ -95,4 +94,27 @@ mat-checkbox{
   right: 10px;
   position: absolute;
   font-size: 18px;
+}
+.food-input{
+}
+mat-form-field{
+  width: 260px;
+  padding-top: 20px;
+}
+.spinner-wrapper{
+  color: #673ab7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 210px);
+  font-size: 95px;
+}
+.meal-card-desc{
+  color: #90949c;
+  font-weight: 300;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3px;
 }
