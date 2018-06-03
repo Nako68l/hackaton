@@ -1,0 +1,51 @@
+<div class="card-page-wrapper" *ngIf="card">
+  <div class="user-block">
+
+    <div class="c-title-wrapper">
+      <div class="c-title">
+        {{card.name + ' ' + card.surname}}
+      </div>
+      <i class="fa fa-pencil"></i>
+    </div>
+    <div class="c-stats">
+      <div class="age">Age: {{card.age}}</div>
+      <div class="height">Height: {{card.height}}</div>
+      <div class="width">Weight: {{card.weight}}</div>
+    </div>
+  </div>
+  <div class="events-block">
+    <div class="events-title-wrapper">
+      <div class="events-title">Events:</div>
+      <button class="add-record" mat-raised-button color="primary" (click)="newRecord()">Add record <i
+        class="fa fa-plus"></i></button>
+    </div>
+    <div class="event-wrapper" *ngFor="let event of card.events;">
+      <div class="header-wrapper">
+        <div class="e-header">
+          {{event.header}}
+        </div>
+        <div class="e-date">
+          {{event.created_at | date: 'hh:mm d MMM yyyy'}}
+        </div>
+      </div>
+      <div class="e-text">
+        {{event.text}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="event-creation-popup-wrapper" *ngIf="showPopup">
+  <div class="ecp-card">
+    <div class="ecp-card-content">
+      <div class="ecp-title">New Record</div>
+      <i class="fa fa-times" style="cursor: pointer" (click)="showPopup = false"></i>
+      <mat-form-field class="ecp-header-input">
+        <input matInput placeholder="Title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
+      </mat-form-field>
+      <mat-form-field class="ecp-description-input">
+        <textarea class="desc-area" matInput placeholder="Description" [(ngModel)]="text" [ngModelOptions]="{standalone: true}"></textarea>
+      </mat-form-field>
+      <button class="create-record" mat-raised-button color="primary" (click)="createRecord()">Create</button>
+    </div>
+  </div>
+</div>

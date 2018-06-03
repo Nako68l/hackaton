@@ -1,44 +1,44 @@
 <div class="registration-form">
   <form class="example-form">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nickname" [(ngModel)]="nickname" [ngModelOptions]="{standalone: true}">
+      <input matInput placeholder="Nickname" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Age" [(ngModel)]="age" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
+    <!--<mat-form-field class="example-full-width">-->
+      <!--<input matInput placeholder="Age" [(ngModel)]="age" [ngModelOptions]="{standalone: true}">-->
+    <!--</mat-form-field>-->
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Weight" [(ngModel)]="weight" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
+    <!--<mat-form-field class="example-full-width">-->
+      <!--<input matInput placeholder="Weight" [(ngModel)]="weight" [ngModelOptions]="{standalone: true}">-->
+    <!--</mat-form-field>-->
 
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Height" [(ngModel)]="height" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
-    <div class="gender">
-      Sex:
-    </div>
-    <mat-radio-group [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">
-      <mat-radio-button checked value="man">Man</mat-radio-button>
-      <mat-radio-button class="second-radio-button" value="woman">Woman</mat-radio-button>
-    </mat-radio-group>
+    <!--<mat-form-field class="example-full-width">-->
+      <!--<input matInput placeholder="Height" [(ngModel)]="height" [ngModelOptions]="{standalone: true}">-->
+    <!--</mat-form-field>-->
+    <!--<div class="gender">-->
+      <!--Sex:-->
+    <!--</div>-->
+    <!--<mat-radio-group [(ngModel)]="gender" [ngModelOptions]="{standalone: true}">-->
+      <!--<mat-radio-button checked value="man">Man</mat-radio-button>-->
+      <!--<mat-radio-button class="second-radio-button" value="woman">Woman</mat-radio-button>-->
+    <!--</mat-radio-group>-->
 
-    <div class="goal">
-      Weight goal:
-    </div>
-    <mat-button-toggle-group class="button-toggle" color="primary" name="fontStyle" aria-label="Font Style" [(ngModel)]="goal" [ngModelOptions]="{standalone: true}">
-      <mat-button-toggle value="gain">Gain</mat-button-toggle>
-      <mat-button-toggle value="maintain">Maintain</mat-button-toggle>
-      <mat-button-toggle value="lose">Lose</mat-button-toggle>
-    </mat-button-toggle-group>
+    <!--<div class="goal">-->
+      <!--Weight goal:-->
+    <!--</div>-->
+    <!--<mat-button-toggle-group class="button-toggle" color="primary" name="fontStyle" aria-label="Font Style" [(ngModel)]="goal" [ngModelOptions]="{standalone: true}">-->
+      <!--<mat-button-toggle value="gain">Gain</mat-button-toggle>-->
+      <!--<mat-button-toggle value="maintain">Maintain</mat-button-toggle>-->
+      <!--<mat-button-toggle value="lose">Lose</mat-button-toggle>-->
+    <!--</mat-button-toggle-group>-->
 
     <div class="navigation-buttons">
       <div class="button-row">
-        <button mat-raised-button (click)="regUser()">REGISTER</button>
+        <button mat-raised-button (click)="createDoctor()">REGISTER</button>
       </div>
     </div>
 

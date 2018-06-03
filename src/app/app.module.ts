@@ -10,10 +10,12 @@ import {FormsModule} from '@angular/forms';
 import { RegComponent } from './reg/reg.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { HistoryComponent } from './history/history.component';
+// import { HistoryComponent } from './history/history.component';
 import {LoggedInGuard} from './guards/LoggedInGuard';
 import {HttpClientModule} from '@angular/common/http';
-import { HeaderComponent } from './header/header/header.component';
+import { HeaderComponent } from './header/header.component';
+import { CardComponent } from './card/card.component';
+import {MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,9 @@ import { HeaderComponent } from './header/header/header.component';
     RegComponent,
     LoginComponent,
     ProfileComponent,
-    HistoryComponent,
-    HeaderComponent
+    // HistoryComponent,
+    HeaderComponent,
+    CardComponent
   ],
   imports: [
     FormsModule,
@@ -31,7 +34,8 @@ import { HeaderComponent } from './header/header/header.component';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatNativeDateModule,
   ],
   providers: [LoggedInGuard],
   bootstrap: [AppComponent]

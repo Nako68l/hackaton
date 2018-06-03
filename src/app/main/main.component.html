@@ -1,115 +1,90 @@
-<div class="search-block">
-  <mat-form-field class="example-form-field">
-    <input matInput class="food-input" type="text" placeholder="Food you want.." [(ngModel)]="value" (keyup.enter)="getItems()"/>
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <i class="fa fa-times"></i>
-    </button>
+<!--<div class="search-block">-->
+<!--<mat-form-field class="example-form-field">-->
+<!--<input matInput class="food-input" type="text" placeholder="Food you want.." [(ngModel)]="value" (keyup.enter)="getItems()"/>-->
+<!--<button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">-->
+<!--<i class="fa fa-times"></i>-->
+<!--</button>-->
+<!--</mat-form-field>-->
+<!--</div>-->
+<div class="search-bar-wrapper">
+  <mat-form-field class="search-input-wrapper">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
+  <button mat-raised-button style="height: 36px;align-self: flex-end;margin-bottom: 15px;" color="primary"
+          (click)="newCard()">Create card
+    <i class="fa fa-plus"></i></button>
 </div>
-<div class="main-wrapper" *ngIf="recipes && !loading">
-  <div class="meal-title">
-    Breakfast
-  </div>
-  <div class="meal-block">
-    <div class="meal-card" *ngFor="let recipe of recipes.Breakfast">
-      <div class="meal-card-content-wrapper">
-        <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
-        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
-        <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
-        <div class="meal-card-content">
-          <div class="meal-card-title">{{recipe.recipe.label}}</div>
-          <div class="meal-card-desc">
-            <span class="yield-count">Portion: {{window.parseInt(recipe.recipe.calories/recipe.recipe.yield)}} kcal</span>
-            <span class="yield-count">Portions: {{recipe.recipe.yield}}</span>
-          </div>
-          <div class="meal-card-controls">
-            <button mat-button color="primary" (click)="recipe.showPopup = true">Ingredients</button>
-            <button mat-button color="primary" (click)="window.open(recipe.recipe.url,'_blank')">Recipe</button>
-          </div>
-        </div>
-      </div>
-      <div class="meal-card-ingredients-wrapper" [hidden]="!recipe?.showPopup">
-        <i class="fa fa-times pointer" (click)="recipe.showPopup = false"></i>
-        <div class="ingredients">
-          <div class="ingredient pointer" (click)="line.checked = !line.checked"
-               [ngClass]="{'class1' : !!line?.checked}"
-               *ngFor="let line of recipe.recipe.ingredients">
-            <mat-checkbox color="primary" [(ngModel)]="line.checked"></mat-checkbox>
-            <span>{{line.text}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="meal-title">
-    Dinner
-  </div>
-  <div class="meal-block">
-    <div class="meal-card" *ngFor="let recipe of recipes.Dinner">
-      <div class="meal-card-content-wrapper">
-        <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
-        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
-        <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
-        <div class="meal-card-content">
-          <div class="meal-card-title">{{recipe.recipe.label}}</div>
-          <div class="meal-card-desc">
-            <span class="yield-count">Portion: {{window.parseInt(recipe.recipe.calories/recipe.recipe.yield)}} kcal</span>
-            <span class="yield-count">Portions: {{recipe.recipe.yield}}</span>
-          </div>
-          <div class="meal-card-controls">
-            <button mat-button color="primary" (click)="recipe.showPopup = true">Ingredients</button>
-            <button mat-button color="primary" (click)="window.open(recipe.recipe.url,'_blank')">Recipe</button>
-          </div>
-        </div>
-      </div>
-      <div class="meal-card-ingredients-wrapper" [hidden]="!recipe?.showPopup">
-        <i class="fa fa-times pointer" (click)="recipe.showPopup = false"></i>
-        <div class="ingredients">
-          <div class="ingredient pointer" (click)="line.checked = !line.checked"
-               [ngClass]="{'class1' : !!line?.checked}"
-               *ngFor="let line of recipe.recipe.ingredients">
-            <mat-checkbox color="primary" [(ngModel)]="line.checked"></mat-checkbox>
-            <span>{{line.text}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="meal-title">
-    Supper
-  </div>
-  <div class="meal-block">
-    <div class="meal-card" *ngFor="let recipe of recipes.Supper">
-      <div class="meal-card-content-wrapper">
-        <button class="add-to-history-btn" mat-mini-fab color="primary" *ngIf="!recipe?.addedToHistory" (click)="addRecipe(recipe)"><i class="fa fa-plus"></i></button>
-        <button class="add-to-history-btn" mat-mini-fab color="accent" *ngIf="!!recipe?.addedToHistory" style="color: white"><i class="fa fa-check"></i></button>
-        <img src="{{recipe.recipe.image}}" alt="recipe.recipe.label">
-        <div class="meal-card-content">
-          <div class="meal-card-title">{{recipe.recipe.label}}</div>
-          <div class="meal-card-desc">
-            <span class="yield-count">Portion: {{window.parseInt(recipe.recipe.calories/recipe.recipe.yield)}} kcal</span>
-            <span class="yield-count">Portions: {{recipe.recipe.yield}}</span>
-          </div>
-          <div class="meal-card-controls">
-            <button mat-button color="primary" (click)="recipe.showPopup = true">Ingredients</button>
-            <button mat-button color="primary" (click)="window.open(recipe.recipe.url,'_blank')">Recipe</button>
-          </div>
-        </div>
-      </div>
-      <div class="meal-card-ingredients-wrapper" [hidden]="!recipe?.showPopup">
-        <i class="fa fa-times pointer" (click)="recipe.showPopup = false"></i>
-        <div class="ingredients">
-          <div class="ingredient pointer" (click)="line.checked = !line.checked"
-               [ngClass]="{'class1' : !!line?.checked}"
-               *ngFor="let line of recipe.recipe.ingredients">
-            <mat-checkbox color="primary" [(ngModel)]="line.checked"></mat-checkbox>
-            <span>{{line.text}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="main-wrapper" *ngIf="cards && !loading">
+  <table mat-table [dataSource]="cards" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="No">
+      <th mat-header-cell *matHeaderCellDef> No.</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell style="width: 500px" *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element" style="cursor: pointer" (click)="router.navigate(['/cards/'+element.id])">
+        {{element.name + ' ' + element.surname}}
+      </td>
+    </ng-container>
+
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell style="width: 80px" *matHeaderCellDef> Created</th>
+      <td mat-cell *matCellDef="let element"> {{element.created_at | date: 'd MMM yyyy'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
 <div class="spinner-wrapper" *ngIf="loading">
   <i class="fa fa-spinner fa-spin"></i>
 </div>
+<div class="event-creation-popup-wrapper" *ngIf="showPopup">
+  <div class="ecp-card">
+    <div class="ecp-card-content">
+      <div class="ecp-title">New Card</div>
+      <i class="fa fa-times" style="cursor: pointer" (click)="showPopup = false"></i>
+      <div class="cont-wrapper">
+        <div class="name">
+          <mat-form-field class="ecp-header-input fir-name">
+            <input matInput placeholder="First name" [(ngModel)]="name" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="ecp-header-input">
+            <input matInput placeholder="Last name" [(ngModel)]="surname" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+        <!--<mat-form-field class="example-full-width">-->
+        <!--<input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Birth date">-->
+        <!--<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+        <!--<mat-datepicker #picker></mat-datepicker>-->
+        <!--</mat-form-field>-->
+        <mat-form-field class="picker-haha">
+          <input matInput [matDatepicker]="picker" [max]="maxDate" [(ngModel)]="birthday" placeholder="Birthday">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="params">
+          <mat-form-field class="ecp-header-input fir-w">
+            <input matInput type="number" placeholder="Weight" [(ngModel)]="weight"
+                   [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="ecp-header-input">
+            <input matInput type="number" placeholder="Height" [(ngModel)]="height"
+                   [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="create-record" mat-raised-button color="primary" (click)="createCard()">Create</button>
+    </div>
+  </div>
+</div>
+

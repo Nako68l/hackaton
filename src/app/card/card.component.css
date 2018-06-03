@@ -1,0 +1,137 @@
+.card-page-wrapper {
+  display: flex;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  position: relative;
+  border-radius: 2px;
+  flex-direction: column;
+  border: 1px solid grey;
+  margin-top: 20px;
+}
+.user-block{
+  padding: 15px;
+  border-bottom: 1px solid #797a7b;
+}
+.c-title{
+  font-size: 25px;
+}
+.c-stats > div {
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.events-block{
+  padding: 15px;
+}
+
+.e-header{
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.e-date{
+  color: #847878;
+  font-size: 14px;
+  float: right;
+}
+
+.event-wrapper{
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d3dce9;
+  margin-bottom: 10px;
+}
+.event-wrapper:last-child{
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.c-title-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+
+.fa-pencil{
+  color: #673ab7;
+  cursor: pointer;
+}
+
+.events-title-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.events-title{
+  font-size: 22px;
+  font-weight: 500;
+  color: #232020;
+}
+
+.event-creation-popup-wrapper{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 20100;
+}
+
+.ecp-card{
+  min-width: 1000px;
+  min-height: 482px;
+  width: 80vw;
+  height: 80vh;
+  position:  absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+.ecp-card-content{
+  position: relative;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+.fa-times{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 20px;
+}
+.ecp-title{
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+mat-form-field{
+  width: 810px;
+}
+.desc-area{
+  width:800px;
+  height:300px;
+  resize: none;
+}
+
+.create-record{
+  width: 230px;
+  height: 45px;
+  margin-top: 15px;
+}
+.e-text{
+  word-break: break-all;
+}

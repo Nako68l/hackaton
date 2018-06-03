@@ -4,14 +4,17 @@ import {MainComponent} from './main/main.component';
 import {RegComponent} from './reg/reg.component';
 import {LoginComponent} from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
-import {HistoryComponent} from './history/history.component';
+// import {HistoryComponent} from './history/history.component';
 import {LoggedInGuard} from './guards/LoggedInGuard';
+import {CardComponent} from './card/card.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'cards',
     component: MainComponent,
-    canActivate: [LoggedInGuard]
+  },{
+    path: 'cards/:cardId',
+    component: CardComponent,
   }, {
     path: 'reg',
     component: RegComponent,
@@ -26,12 +29,12 @@ const routes: Routes = [
     canActivate: [LoggedInGuard]
 
   },
-  {
-    path: 'history',
-    component: HistoryComponent,
-    canActivate: [LoggedInGuard]
-
-  },
+  // {
+  //   path: 'history',
+  //   component: HistoryComponent,
+  //   canActivate: [LoggedInGuard]
+  //
+  // },
 ];
 
 @NgModule({

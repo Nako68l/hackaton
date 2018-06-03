@@ -1,106 +1,36 @@
-.meal-block {
-  display: flex;
-  justify-content: space-between;
-}
-
-.meal-block .mat-card {
-  margin-bottom: 15px;
-}
-
-.meal-navigation {
-  font-size: 35px;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 10px 15px;
-}
-
-img {
-  border-radius: 3px;
-  width: 236px;
-}
-
-mat-card {
-  /*max-width: 180px;*/
-  max-height: 260px;
-}
-
-.meal-card {
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
-  display: block;
-  position: relative;
-  border-radius: 2px;
-}
-
-.meal-card-content {
-  margin: 10px;
-}
-
-.meal-card-controls {
-  display: flex;
-  justify-content: space-between;
-}
-
-.meal-card-title {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 17px;
-  width: 216px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  font-family: Roboto,"Helvetica Neue",sans-serif;
-}
-
-.meal-title{
-  font-size: 30px;
-  margin: 15px 0 13px 0;
-  border-bottom: 1px solid #d3dce9;
-  padding-bottom: 2px;
-}
-
-.meal-card-ingredients-wrapper{
-  position: absolute;
-  height: 100%;
-  background: white;
+table {
   width: 100%;
-  bottom: 0;
 }
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+.search-input-wrapper{
+  width: 40% !important;
+}
+
+.search-bar-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+
+.search-input-wrapper{
+  width: 260px;
+  padding-top: 20px;
+}
+
 .meal-card-ingredients-wrapper .fa-times{
   font-size: 18px;
   right: 8px;
   position: absolute;
   top: 8px;
 }
-.ingredients{
-  padding:15px;
-  overflow-y: auto;
-  max-height: 296px;
-}
-.ingredient{
-  display: flex;
-  align-items: center;
-  padding: 9px 0;
-  border-bottom: 1px solid #ccc;
-}
-.class1{
-  text-decoration: line-through;
-}
-mat-checkbox{
-  margin-right: 9px;
-}
-.add-to-history-btn{
-  top: 10px;
-  right: 10px;
-  position: absolute;
-  font-size: 18px;
-}
-.food-input{
-}
-mat-form-field{
-  width: 260px;
-  padding-top: 20px;
-}
+
+
 .spinner-wrapper{
   color: #673ab7;
   display: flex;
@@ -109,12 +39,88 @@ mat-form-field{
   height: calc(100vh - 210px);
   font-size: 95px;
 }
-.meal-card-desc{
-  color: #90949c;
-  font-weight: 300;
-  font-size: 15px;
+
+
+
+.event-creation-popup-wrapper{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.ecp-card{
+  min-width: 600px;
+  min-height: 382px;
+  width: 50vw;
+  height: 62vh;
+  position:  absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+}
+.ecp-card-content{
+  position: relative;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+.fa-times{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 20px;
+}
+.ecp-title{
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.create-record{
+  width: 180px;
+  height: 50px;
+  margin-top: 36px;
+}
+
+.ecp-card .mat-form-field{
+  font-size: 19px;
+}
+
+.name, .params{
+  display: inline;
+}
+
+.cont-wrapper{
   display: flex;
   flex-direction: column;
+}
+
+.name{
+  display: flex;
   justify-content: space-between;
-  margin-bottom: 3px;
+  width: 100%;
+}
+.fir-name, .fir-w{
+  margin-right: 80px;
+}
+
+.picker-haha{
+  width: 40%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cont-wrapper{
+  margin-top: 20px;
 }

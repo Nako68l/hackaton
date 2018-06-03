@@ -1,8 +1,11 @@
 {
   "/api": {
-    "target": "http://b43d1674.ngrok.io",
+    "target": "http://192.168.5.46:9090",
     "secure": false,
     "logLevel": "debug",
-    "changeOrigin": true
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
   }
 }
